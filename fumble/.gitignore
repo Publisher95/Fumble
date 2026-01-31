@@ -23,7 +23,6 @@
 # misc
 .DS_Store
 *.pem
-/images/
 
 # debug
 npm-debug.log*
