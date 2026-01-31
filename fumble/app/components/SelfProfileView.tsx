@@ -4,8 +4,13 @@ import ProfileCard from "./ProfileCard";
 import PromptCard from "./PromptCard";
 import VitalsCard from "./VitalsCard";
 import PhotoCard from "./PhotoCard";
+import { UserProfile } from "../types/user";
 
-export default function SelfProfileView() {
+interface SelfProfileViewProps {
+  currentUser: UserProfile;
+}
+
+export default function SelfProfileView({ currentUser }: SelfProfileViewProps) {
   return (
     <div className="flex flex-col gap-3 p-3 pb-24 overflow-x-hidden">
       {/* Header */}
@@ -14,40 +19,45 @@ export default function SelfProfileView() {
         <p className="text-center text-zinc-500 text-sm">Preview mode</p>
       </div>
 
-      {/* 1. Hero Profile Card - Static */}
+      {/* 1. Hero Profile Card */}
       <ProfileCard
-        name="User One"
-        imageSrc="/profile-main.png"
-        tags={["Coding", "Design", "Coffee"]}
+        name={currentUser.name}
+        imageSrc={currentUser.mainPhoto}
+        tags={currentUser.tags}
       />
 
-      {/* 2. Prompt */}
+      {/* 2. Prompt 1 */}
       <PromptCard
-        question="I'm looking for"
-        answer="Someone who can center a div without Googling it."
+        question={currentUser.prompts[0].question}
+        answer={currentUser.prompts[0].answer}
       />
 
       {/* 3. Vitals */}
       <VitalsCard
-        age={28}
-        height="6'1&quot;"
-        stereotype="Developer"
-        profession="Software Engineer"
-        location="San Francisco, CA"
-        relationshipType="Long-term"
+        age={currentUser.age}
+        height={currentUser.height}
+        stereotype={currentUser.stereotype}
+        profession={currentUser.profession}
+        location={currentUser.location}
+        relationshipType={currentUser.relationshipType}
       />
 
-      {/* 4. Photo */}
-      <PhotoCard />
+      {/* 4-8. Photos */}
+      {currentUser.photos.map((photo, idx) => (
+        <PhotoCard key={`photo-${idx}`} imageSrc={photo} />
+      ))}
 
-      {/* 5. Prompt */}
+      {/* 9. Prompt 2 */}
       <PromptCard
-        question="Worst idea I've ever had"
-        answer="Thinking I could finish this side project in one weekend."
+        question={currentUser.prompts[1].question}
+        answer={currentUser.prompts[1].answer}
       />
 
-      {/* 6. Photo */}
-      <PhotoCard />
+      {/* 10. Prompt 3 */}
+      <PromptCard
+        question={currentUser.prompts[2].question}
+        answer={currentUser.prompts[2].answer}
+      />
     </div>
   );
 }

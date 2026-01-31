@@ -7,16 +7,17 @@ import ChatView from "./components/ChatView";
 import SelfProfileView from "./components/SelfProfileView";
 import ChatDetailView from "./components/ChatDetailView";
 import { Heart, MessageCircle, User } from "lucide-react";
+import { UserProfile } from "./types/user";
 
 interface Chat { id: number; name: string; }
 
 export default function Home() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [currentUser, setCurrentUser] = useState<UserProfile | null>(null);
   const [activeTab, setActiveTab] = useState("swiping");
   const [activeChat, setActiveChat] = useState<Chat | null>(null);
 
-  if (!isAuthenticated) {
-    return <LoginView onLoginSuccess={() => setIsAuthenticated(true)} />;
+  if (!currentUser) {
+    return <LoginView onLoginSuccess={(user) => setCurrentUser(user)} />;
   }
 
   if (activeChat) {
@@ -29,9 +30,9 @@ export default function Home() {
 
         {/* Content Area */}
         <div className="flex-1 overflow-y-auto w-full">
-          {activeTab === "swiping" && <SwipingView />}
+          {activeTab === "swiping" && <SwipingView currentUser={currentUser} />}
           {activeTab === "chat" && <ChatView onSelectChat={(chat) => setActiveChat(chat)} />}
-          {activeTab === "profile" && <SelfProfileView />}
+          {activeTab === "profile" && <SelfProfileView currentUser={currentUser} />}
         </div>
 
         {/* Bottom Tab Bar */}

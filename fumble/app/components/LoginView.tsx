@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import { UserProfile } from "../types/user";
+import { getUserByAccessCode } from "../lib/users";
 
 interface LoginViewProps {
-  onLoginSuccess: () => void;
+  onLoginSuccess: (user: UserProfile) => void;
 }
 
 export default function LoginView({ onLoginSuccess }: LoginViewProps) {
@@ -19,8 +21,9 @@ export default function LoginView({ onLoginSuccess }: LoginViewProps) {
 
     // Auto-check on length 4
     if (val.length === 4) {
-      if (val === "TEST") {
-        onLoginSuccess();
+      const user = getUserByAccessCode(val);
+      if (user) {
+        onLoginSuccess(user);
       } else {
         setError(true);
       }
