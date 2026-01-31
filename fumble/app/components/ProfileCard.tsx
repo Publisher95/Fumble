@@ -20,11 +20,12 @@ export default function ProfileCard({ name, imageSrc, tags }: ProfileCardProps) 
 
       <div className="absolute bottom-0 left-0 w-full p-4 flex flex-col gap-2">
         <h1 className="text-3xl font-semibold text-white tracking-tight">{name}</h1>
-        <div className="flex flex-wrap gap-2">
+        {/* Scrollable container with mask for fade effect at edge if desired, but simple scroll first */}
+        <div className="flex flex-nowrap overflow-x-auto gap-2 pb-2 -mx-4 px-4 scrollbar-hide">
           {tags.map((tag, index) => (
             <span
               key={index}
-              className="px-3 py-1 rounded-full text-xs font-medium text-white bg-gradient-to-r from-pink-500/80 to-purple-500/80 backdrop-blur-sm border border-white/20"
+              className="whitespace-nowrap px-3 py-1.5 rounded-full text-xs font-medium text-white bg-black/50 backdrop-blur-md border border-white/10"
             >
               {tag}
             </span>

@@ -1,3 +1,5 @@
+import { Briefcase, MapPin, Ruler, Users, Cake } from "lucide-react";
+
 interface VitalsCardProps {
   age: number;
   height: string;
@@ -14,21 +16,33 @@ export default function VitalsCard({
   relationshipType,
 }: VitalsCardProps) {
   return (
-    <div className="w-full bg-zinc-200/50 p-6 rounded-xl flex flex-col gap-3 text-sm font-medium text-zinc-800">
-      <div className="flex gap-4">
-        <span>{age}</span>
-        <span>{height}</span>
+    <div className="w-full bg-white rounded-xl p-4 flex flex-col gap-4 text-zinc-900 shadow-sm border border-zinc-100">
+      {/* Top Row: Age | Height */}
+      <div className="flex items-center gap-4 border-b border-zinc-100 pb-4">
+        <div className="flex items-center gap-2 min-w-0">
+          <Cake size={20} className="text-zinc-900" />
+          <span className="font-semibold">{age}</span>
+        </div>
+        <div className="h-4 w-[1px] bg-zinc-300" />
+        <div className="flex items-center gap-2 min-w-0">
+          <Ruler size={20} className="text-zinc-900" />
+          <span className="font-semibold">{height}</span>
+        </div>
       </div>
 
-      <div className="flex flex-col gap-3">
-        <div className="flex items-center gap-2">
-          <span>{profession}</span>
+      {/* List Items */}
+      <div className="flex flex-col gap-4">
+        <div className="flex items-center gap-3">
+          <Briefcase size={20} className="text-zinc-900 shrink-0" />
+          <span className="text-base font-medium">{profession}</span>
         </div>
-        <div className="flex items-center gap-2">
-          <span>{location}</span>
+        <div className="flex items-center gap-3">
+          <MapPin size={20} className="text-zinc-900 shrink-0" />
+          <span className="text-base font-medium">{location}</span>
         </div>
-        <div className="flex items-center gap-2">
-          <span>{relationshipType}</span>
+        <div className="flex items-center gap-3">
+          <Users size={20} className="text-zinc-900 shrink-0" />
+          <span className="text-base font-medium">{relationshipType}</span>
         </div>
       </div>
     </div>
