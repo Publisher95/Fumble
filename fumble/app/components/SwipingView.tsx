@@ -97,12 +97,14 @@ export default function SwipingView({ currentUser, socket }: { currentUser: User
       </SwipeableCard>
 
       {/* 2. Prompt 1 */}
-      <SwipeableCard onLike={() => handleSwipe("right")} onNope={() => handleSwipe("left")}>
-        <PromptCard
-          question={displayUser.prompts[0].question}
-          answer={displayUser.prompts[0].answer}
-        />
-      </SwipeableCard>
+      {displayUser.prompts?.[0] && (
+        <SwipeableCard onLike={() => handleSwipe("right")} onNope={() => handleSwipe("left")}>
+          <PromptCard
+            question={displayUser.prompts[0].question}
+            answer={displayUser.prompts[0].answer}
+          />
+        </SwipeableCard>
+      )}
 
       {/* 3. Vitals */}
       <SwipeableCard onLike={() => handleSwipe("right")} onNope={() => handleSwipe("left")}>
@@ -116,27 +118,31 @@ export default function SwipingView({ currentUser, socket }: { currentUser: User
       </SwipeableCard>
 
       {/* 4-8. Photos */}
-      {displayUser.photos.map((photo, idx) => (
+      {displayUser.photos?.map((photo, idx) => (
         <SwipeableCard key={`photo-${idx}`} onLike={() => handleSwipe("right")} onNope={() => handleSwipe("left")}>
           <PhotoCard imageSrc={photo} />
         </SwipeableCard>
       ))}
 
       {/* 9. Prompt 2 */}
-      <SwipeableCard onLike={() => handleSwipe("right")} onNope={() => handleSwipe("left")}>
-        <PromptCard
-          question={displayUser.prompts[1].question}
-          answer={displayUser.prompts[1].answer}
-        />
-      </SwipeableCard>
+      {displayUser.prompts?.[1] && (
+        <SwipeableCard onLike={() => handleSwipe("right")} onNope={() => handleSwipe("left")}>
+          <PromptCard
+            question={displayUser.prompts[1].question}
+            answer={displayUser.prompts[1].answer}
+          />
+        </SwipeableCard>
+      )}
 
       {/* 10. Prompt 3 */}
-      <SwipeableCard onLike={() => handleSwipe("right")} onNope={() => handleSwipe("left")}>
-        <PromptCard
-          question={displayUser.prompts[2].question}
-          answer={displayUser.prompts[2].answer}
-        />
-      </SwipeableCard>
+      {displayUser.prompts?.[2] && (
+        <SwipeableCard onLike={() => handleSwipe("right")} onNope={() => handleSwipe("left")}>
+          <PromptCard
+            question={displayUser.prompts[2].question}
+            answer={displayUser.prompts[2].answer}
+          />
+        </SwipeableCard>
+      )}
     </div>
   );
 }

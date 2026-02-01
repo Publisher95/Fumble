@@ -4,6 +4,11 @@ import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, MoreHorizontal, BadgeCheck, SendHorizontal } from "lucide-react";
 import { Socket } from "socket.io-client";
 import { updateChatLastMessage } from "../lib/chatStorage";
+import { getUserById } from "../lib/users";
+import ProfileCard from "./ProfileCard";
+import PromptCard from "./PromptCard";
+import VitalsCard from "./VitalsCard";
+import PhotoCard from "./PhotoCard";
 
 interface Message {
   id: number;
@@ -22,7 +27,10 @@ interface ChatDetailViewProps {
 export default function ChatDetailView({ chat, onBack, currentUserId, socket }: ChatDetailViewProps) {
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputText, setInputText] = useState("");
+  const [activeTab, setActiveTab] = useState<"chat" | "profile">("chat");
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const chatUserProfile = getUserById(chat.id);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -122,61 +130,118 @@ export default function ChatDetailView({ chat, onBack, currentUserId, socket }: 
 
       {/* Tabs */}
       <div className="flex border-b border-zinc-100 bg-white">
-        <button className="flex-1 py-3 text-center border-b-2 border-black font-bold text-sm">
+        <button
+          onClick={() => setActiveTab("chat")}
+          className={`flex-1 py-3 text-center text-sm font-bold ${activeTab === "chat" ? "border-b-2 border-black text-black" : "text-zinc-400"}`}
+        >
           Chat
         </button>
-        <button className="flex-1 py-3 text-center text-zinc-400 font-bold text-sm">
+        <button
+          onClick={() => setActiveTab("profile")}
+          className={`flex-1 py-3 text-center text-sm font-bold ${activeTab === "profile" ? "border-b-2 border-black text-black" : "text-zinc-400"}`}
+        >
           Profile
         </button>
       </div>
 
-      {/* Messages */}
-      <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-4 bg-white">
-        {messages.map((msg) => (
-          <div key={msg.id} className={`flex w-full ${msg.isMe ? 'justify-end' : 'justify-start items-end gap-2'}`}>
+      {activeTab === "chat" ? (
+        <>
+          {/* Messages */}
+          <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-4 bg-white">
+            {messages.map((msg) => (
+              <div key={msg.id} className={`flex w-full ${msg.isMe ? 'justify-end' : 'justify-start items-end gap-2'}`}>
 
-            {/* Avatar for Their messages */}
-            {!msg.isMe && (
-              <div className="w-8 h-8 rounded-full bg-zinc-200 flex items-center justify-center text-xs font-bold text-zinc-500 shrink-0">
-                {chat.name[0]}
-              </div>
-            )}
+                {/* Avatar for Their messages */}
+                {!msg.isMe && (
+                  <div className="w-8 h-8 rounded-full bg-zinc-200 flex items-center justify-center text-xs font-bold text-zinc-500 shrink-0">
+                    {chat.name[0]}
+                  </div>
+                )}
 
-            <div
-              className={`max-w-[75%] px-4 py-3 text-sm leading-relaxed
+                <div
+                  className={`max-w-[75%] px-4 py-3 text-sm leading-relaxed
                     ${msg.isMe
-                  ? 'bg-black text-white rounded-2xl rounded-tr-sm'
-                  : 'bg-zinc-100 text-black rounded-2xl rounded-tl-sm'
-                }`}
-            >
-              {msg.text}
+                      ? 'bg-black text-white rounded-2xl rounded-tr-sm'
+                      : 'bg-zinc-100 text-black rounded-2xl rounded-tl-sm'
+                    }`}
+                >
+                  {msg.text}
+                </div>
+              </div>
+            ))}
+            <div ref={messagesEndRef} />
+          </div>
+
+          <div className="p-4 bg-white border-t border-zinc-100 pb-24">
+            <div className="flex items-center gap-3">
+              <div className="flex-1 bg-zinc-100 rounded-full h-12 flex items-center px-4">
+                <input
+                  type="text"
+                  placeholder="Send a message"
+                  className="bg-transparent w-full outline-none text-sm placeholder-zinc-400"
+                  value={inputText}
+                  onChange={(e) => setInputText(e.target.value)}
+                  onKeyPress={handleKeyPress}
+                />
+              </div>
+              <button
+                onClick={handleSend}
+                className="w-10 h-10 rounded-full border border-zinc-200 flex items-center justify-center text-black bg-white shadow-sm hover:bg-zinc-50 active:scale-95 transition-all"
+              >
+                <SendHorizontal size={20} />
+              </button>
             </div>
           </div>
-        ))}
-        <div ref={messagesEndRef} />
-      </div>
+        </>
+      ) : (
+        /* Profile View */
+        <div className="flex-1 overflow-y-auto p-3 pb-24 flex flex-col gap-3 bg-[#f4f4f5]">
+          {chatUserProfile ? (
+            <>
+              <ProfileCard
+                name={chatUserProfile.name}
+                imageSrc={chatUserProfile.mainPhoto}
+                tags={chatUserProfile.tags}
+              />
 
-      {/* Footer */}
-      <div className="p-4 bg-white border-t border-zinc-100 pb-24">
-        <div className="flex items-center gap-3">
-          <div className="flex-1 bg-zinc-100 rounded-full h-12 flex items-center px-4">
-            <input
-              type="text"
-              placeholder="Send a message"
-              className="bg-transparent w-full outline-none text-sm placeholder-zinc-400"
-              value={inputText}
-              onChange={(e) => setInputText(e.target.value)}
-              onKeyPress={handleKeyPress}
-            />
-          </div>
-          <button
-            onClick={handleSend}
-            className="w-10 h-10 rounded-full border border-zinc-200 flex items-center justify-center text-black bg-white shadow-sm hover:bg-zinc-50 active:scale-95 transition-all"
-          >
-            <SendHorizontal size={20} />
-          </button>
+              {chatUserProfile.prompts?.[0] && (
+                <PromptCard
+                  question={chatUserProfile.prompts[0].question}
+                  answer={chatUserProfile.prompts[0].answer}
+                />
+              )}
+
+              <VitalsCard
+                age={chatUserProfile.age}
+                height={chatUserProfile.height}
+                stereotype={chatUserProfile.stereotype}
+                profession={chatUserProfile.profession}
+                location={chatUserProfile.location}
+              />
+
+              {chatUserProfile.photos?.map((photo, idx) => (
+                <PhotoCard key={`photo-${idx}`} imageSrc={photo} />
+              ))}
+
+              {chatUserProfile.prompts?.[1] && (
+                <PromptCard
+                  question={chatUserProfile.prompts[1].question}
+                  answer={chatUserProfile.prompts[1].answer}
+                />
+              )}
+
+              {chatUserProfile.prompts?.[2] && (
+                <PromptCard
+                  question={chatUserProfile.prompts[2].question}
+                  answer={chatUserProfile.prompts[2].answer}
+                />
+              )}
+            </>
+          ) : (
+            <div className="p-8 text-center text-zinc-400">User profile not found</div>
+          )}
         </div>
-      </div>
+      )}
     </div>
   );
 }

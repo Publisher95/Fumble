@@ -4,17 +4,30 @@
     "accessCode": "A7K2",
     "name": "Ronald Jangam",
     "mainPhoto": "/users/1/main.jpg",
-    "tags": ["Travel", "Photography", "Languages"],
+    "tags": [
+      "Travel",
+      "Photography",
+      "Languages"
+    ],
     "age": 25,
     "height": "5'8\"",
     "stereotype": "Loves to travel and makes it his whole personality",
     "profession": "Travel Influencer",
     "location": "Everywhere",
-    "photos": ["/users/1/photo1.jpg", "/users/1/photo2.jpg", "/users/1/photo3.jpg", "/users/1/photo4.jpg", "/users/1/photo5.jpg"],
+    "photos": [],
     "prompts": [
-      { "question": "About me", "answer": "25 countries 🌍 next stop: your heart" },
-      { "question": "Dating me is like", "answer": "Flying first class around the world" },
-      { "question": "My simple pleasures", "answer": "Boarding group 5" }
+      {
+        "question": "About me",
+        "answer": "25 countries 🌍 next stop: your heart"
+      },
+      {
+        "question": "Dating me is like",
+        "answer": "Flying first class around the world"
+      },
+      {
+        "question": "My simple pleasures",
+        "answer": "Boarding group 5"
+      }
     ]
   },
   {
@@ -22,17 +35,30 @@
     "accessCode": "B3M9",
     "name": "Peter Grebe",
     "mainPhoto": "/users/2/main.jpg",
-    "tags": ["Dogs", "Dogs", "And more dogs"],
+    "tags": [
+      "Dogs",
+      "Dogs",
+      "And more dogs"
+    ],
     "age": 30,
     "height": "4'2\"",
     "stereotype": "Likes dogs more than people",
     "profession": "Animal Shelter Volunteer",
     "location": "Boulder, CO",
-    "photos": ["/users/2/photo1.jpg", "/users/2/photo2.jpg", "/users/2/photo3.jpg", "/users/2/photo4.jpg", "/users/2/photo5.jpg"],
+    "photos": [],
     "prompts": [
-      { "question": "About me", "answer": "I love dogs!" },
-      { "question": "Dating me is like", "answer": "Competing for second place" },
-      { "question": "My simple pleasures", "answer": "Dog treats (for the dog)" }
+      {
+        "question": "About me",
+        "answer": "I love dogs!"
+      },
+      {
+        "question": "Dating me is like",
+        "answer": "Competing for second place"
+      },
+      {
+        "question": "My simple pleasures",
+        "answer": "Dog treats (for the dog)"
+      }
     ]
   },
   {
@@ -40,17 +66,30 @@
     "accessCode": "C8N4",
     "name": "Alex Chong",
     "mainPhoto": "/users/3/main.jpg",
-    "tags": ["Gym", "Working Out", "Lifting"],
+    "tags": [
+      "Gym",
+      "Working Out",
+      "Lifting"
+    ],
     "age": 27,
     "height": "5'10\"",
     "stereotype": "Gym rat",
     "profession": "Personal Trainer",
     "location": "Denver, CO",
-    "photos": ["/users/3/photo1.jpg", "/users/3/photo2.jpg", "/users/3/photo3.jpg", "/users/3/photo4.jpg", "/users/3/photo5.jpg"],
+    "photos": [],
     "prompts": [
-      { "question": "About me", "answer": "I practically live in the gym" },
-      { "question": "Dating me is like", "answer": "A rest day (rare)" },
-      { "question": "My simple pleasures", "answer": "Protein shakes" }
+      {
+        "question": "About me",
+        "answer": "I practically live in the gym"
+      },
+      {
+        "question": "Dating me is like",
+        "answer": "A rest day (rare)"
+      },
+      {
+        "question": "My simple pleasures",
+        "answer": "Protein shakes"
+      }
     ]
   },
   {
@@ -58,17 +97,30 @@
     "accessCode": "D1P6",
     "name": "Sophie Lu",
     "mainPhoto": "/users/4/main.jpg",
-    "tags": ["Tacos", "Pizza", "Sushi"],
+    "tags": [
+      "Tacos",
+      "Pizza",
+      "Sushi"
+    ],
     "age": 28,
     "height": "5'11\"",
     "stereotype": "Loves food and going out to eat",
     "profession": "Food Blogger",
     "location": "Boulder, CO",
-    "photos": ["/users/4/photo1.jpg", "/users/4/photo2.jpg", "/users/4/photo3.jpg", "/users/4/photo4.jpg", "/users/4/photo5.jpg"],
+    "photos": [],
     "prompts": [
-      { "question": "About me", "answer": "I plan trips around meals" },
-      { "question": "Dating me is like", "answer": "Eating a steak dinner" },
-      { "question": "My simple pleasures", "answer": "Brunch" }
+      {
+        "question": "About me",
+        "answer": "I plan trips around meals"
+      },
+      {
+        "question": "Dating me is like",
+        "answer": "Eating a steak dinner"
+      },
+      {
+        "question": "My simple pleasures",
+        "answer": "Brunch"
+      }
     ]
   },
   {
@@ -76,17 +128,30 @@
     "accessCode": "E5Q8",
     "name": "Ashley Lastnameless",
     "mainPhoto": "/users/5/main.jpg",
-    "tags": ["Can't Say", "Secret", "Mystery"],
+    "tags": [
+      "Can't Say",
+      "Secret",
+      "Mystery"
+    ],
     "age": 25,
     "height": "6'0\"",
     "stereotype": "Trying to be mysterious",
     "profession": "Cannot Disclose.",
     "location": "Somewhere",
-    "photos": ["/users/5/photo1.jpg", "/users/5/photo2.jpg", "/users/5/photo3.jpg", "/users/5/photo4.jpg", "/users/5/photo5.jpg"],
+    "photos": [],
     "prompts": [
-      { "question": "About me", "answer": "My life is an NDA" },
-      { "question": "Dating me is like", "answer": "Going undercover" },
-      { "question": "My simple pleasures", "answer": "Sitting in silence" }
+      {
+        "question": "About me",
+        "answer": "My life is an NDA"
+      },
+      {
+        "question": "Dating me is like",
+        "answer": "Going undercover"
+      },
+      {
+        "question": "My simple pleasures",
+        "answer": "Sitting in silence"
+      }
     ]
   },
   {
@@ -94,17 +159,30 @@
     "accessCode": "F9R3",
     "name": "Felina Koulov",
     "mainPhoto": "/users/6/main.jpg",
-    "tags": ["Hiking", "Skiing", "Running"],
+    "tags": [
+      "Hiking",
+      "Skiing",
+      "Running"
+    ],
     "age": 24,
     "height": "5'7\"",
     "stereotype": "Loves to hike",
     "profession": "Ski Instructor",
     "location": "Aspen, CO",
-    "photos": ["/users/6/photo1.jpg", "/users/6/photo2.jpg", "/users/6/photo3.jpg", "/users/6/photo4.jpg", "/users/6/photo5.jpg"],
+    "photos": [],
     "prompts": [
-      { "question": "About me", "answer": "Outdoorsy af" },
-      { "question": "Dating me is like", "answer": "Just one more mile" },
-      { "question": "My simple pleasures", "answer": "Hiking 14ers" }
+      {
+        "question": "About me",
+        "answer": "Outdoorsy af"
+      },
+      {
+        "question": "Dating me is like",
+        "answer": "Just one more mile"
+      },
+      {
+        "question": "My simple pleasures",
+        "answer": "Hiking 14ers"
+      }
     ]
   },
   {
@@ -112,17 +190,30 @@
     "accessCode": "G2S7",
     "name": "Bargav Sairam",
     "mainPhoto": "/users/7/main.jpg",
-    "tags": ["Being both a particle and a wave", "The double slit experiment", "Heisenberg Uncertainty Principle"],
+    "tags": [
+      "Being both a particle and a wave",
+      "The double slit experiment",
+      "Heisenberg Uncertainty Principle"
+    ],
     "age": 40,
     "height": "4'6\"",
     "stereotype": "Is attracted to nerds and is a physics nerd",
     "profession": "Physics Professor",
     "location": "Cambridge, MA",
-    "photos": ["/users/7/photo1.jpg", "/users/7/photo2.jpg", "/users/7/photo3.jpg", "/users/7/photo4.jpg", "/users/7/photo5.jpg"],
+    "photos": [],
     "prompts": [
-      { "question": "About me", "answer": "Attracted to intelligence" },
-      { "question": "Dating me is like", "answer": "A TED talk with feelings" },
-      { "question": "My simple pleasures", "answer": "Trivia" }
+      {
+        "question": "About me",
+        "answer": "Attracted to intelligence"
+      },
+      {
+        "question": "Dating me is like",
+        "answer": "A TED talk with feelings"
+      },
+      {
+        "question": "My simple pleasures",
+        "answer": "Trivia"
+      }
     ]
   },
   {
@@ -130,17 +221,30 @@
     "accessCode": "H6T1",
     "name": "Nithin Manoj",
     "mainPhoto": "/users/8/main.jpg",
-    "tags": ["Mysteries", "CLUE", "Puzzles"],
+    "tags": [
+      "Mysteries",
+      "CLUE",
+      "Puzzles"
+    ],
     "age": 23,
     "height": "7'5\"",
     "stereotype": "Claims to be looking for a partner in crime, likes solving mysteries",
     "profession": "Detective",
     "location": "Chicago, IL",
-    "photos": ["/users/8/photo1.jpg", "/users/8/photo2.jpg", "/users/8/photo3.jpg", "/users/8/photo4.jpg", "/users/8/photo5.jpg"],
+    "photos": [],
     "prompts": [
-      { "question": "About me", "answer": "Looking for a partner in crime" },
-      { "question": "Dating me is like", "answer": "Matching outfits and alibis" },
-      { "question": "My simple pleasures", "answer": "Getting away with it" }
+      {
+        "question": "About me",
+        "answer": "Looking for a partner in crime"
+      },
+      {
+        "question": "Dating me is like",
+        "answer": "Matching outfits and alibis"
+      },
+      {
+        "question": "My simple pleasures",
+        "answer": "Getting away with it"
+      }
     ]
   },
   {
@@ -148,17 +252,30 @@
     "accessCode": "J4U5",
     "name": "Abhi Sachi",
     "mainPhoto": "/users/9/main.jpg",
-    "tags": ["I have no interests", "I'm so boring", "Just chilling I guess"],
+    "tags": [
+      "I have no interests",
+      "I'm so boring",
+      "Just chilling I guess"
+    ],
     "age": 31,
     "height": "6'1\"",
     "stereotype": "Claims to be fluent in sarcasm in a cliche way",
     "profession": "Customer Service Employee",
     "location": "Phoenix, AZ",
-    "photos": ["/users/9/photo1.jpg", "/users/9/photo2.jpg", "/users/9/photo3.jpg", "/users/9/photo4.jpg", "/users/9/photo5.jpg"],
+    "photos": [],
     "prompts": [
-      { "question": "About me", "answer": "Fluent in sarcasm" },
-      { "question": "Dating me is like", "answer": "Figuring out my tone" },
-      { "question": "My simple pleasures", "answer": "Dry replies" }
+      {
+        "question": "About me",
+        "answer": "Fluent in sarcasm"
+      },
+      {
+        "question": "Dating me is like",
+        "answer": "Figuring out my tone"
+      },
+      {
+        "question": "My simple pleasures",
+        "answer": "Dry replies"
+      }
     ]
   },
   {
@@ -166,17 +283,30 @@
     "accessCode": "K8V2",
     "name": "Sage Morgan-LaRosa",
     "mainPhoto": "/users/10/main.jpg",
-    "tags": ["Decryption", "Coding", "Darkness"],
+    "tags": [
+      "Decryption",
+      "Coding",
+      "Darkness"
+    ],
     "age": 22,
     "height": "5'4\"",
     "stereotype": "Trying to be mysterious because is a hacker",
     "profession": "'Ethical' Hacker",
     "location": "City, State",
-    "photos": ["/users/10/photo1.jpg", "/users/10/photo2.jpg", "/users/10/photo3.jpg", "/users/10/photo4.jpg", "/users/10/photo5.jpg"],
+    "photos": [],
     "prompts": [
-      { "question": "About me", "answer": "Just ask." },
-      { "question": "Dating me is like", "answer": "Solving a mystery" },
-      { "question": "My simple pleasures", "answer": "Being vague" }
+      {
+        "question": "About me",
+        "answer": "Just ask."
+      },
+      {
+        "question": "Dating me is like",
+        "answer": "Solving a mystery"
+      },
+      {
+        "question": "My simple pleasures",
+        "answer": "Being vague"
+      }
     ]
   },
   {
@@ -184,17 +314,30 @@
     "accessCode": "L3W9",
     "name": "Katrina Enriquez",
     "mainPhoto": "/users/11/main.jpg",
-    "tags": ["Agile Workflow", "B2B SAAS", "Optimizing"],
+    "tags": [
+      "Agile Workflow",
+      "B2B SAAS",
+      "Optimizing"
+    ],
     "age": 32,
     "height": "6'2\"",
     "stereotype": "Businesswoman who makes it her whole personality",
     "profession": "Marketing Analyst",
     "location": "New York, NY",
-    "photos": ["/users/11/photo1.jpg", "/users/11/photo2.jpg", "/users/11/photo3.jpg", "/users/11/photo4.jpg", "/users/11/photo5.jpg"],
+    "photos": [],
     "prompts": [
-      { "question": "About me", "answer": "CEO mindset" },
-      { "question": "Dating me is like", "answer": "A networking event" },
-      { "question": "My simple pleasures", "answer": "The hustle" }
+      {
+        "question": "About me",
+        "answer": "CEO mindset"
+      },
+      {
+        "question": "Dating me is like",
+        "answer": "A networking event"
+      },
+      {
+        "question": "My simple pleasures",
+        "answer": "The hustle"
+      }
     ]
   },
   {
@@ -202,17 +345,30 @@
     "accessCode": "M7X4",
     "name": "Rylee Johnston",
     "mainPhoto": "/users/12/main.jpg",
-    "tags": ["Val", "League", "Rust"],
+    "tags": [
+      "Val",
+      "League",
+      "Rust"
+    ],
     "age": 21,
     "height": "5'3\"",
     "stereotype": "Gamer girl",
     "profession": "Gamer",
     "location": "Los Angeles, CA",
-    "photos": ["/users/12/photo1.jpg", "/users/12/photo2.jpg", "/users/12/photo3.jpg", "/users/12/photo4.jpg", "/users/12/photo5.jpg"],
+    "photos": [],
     "prompts": [
-      { "question": "About me", "answer": "I game a little" },
-      { "question": "Dating me is like", "answer": "An open world RPG" },
-      { "question": "My simple pleasures", "answer": "New skins" }
+      {
+        "question": "About me",
+        "answer": "I game a little"
+      },
+      {
+        "question": "Dating me is like",
+        "answer": "An open world RPG"
+      },
+      {
+        "question": "My simple pleasures",
+        "answer": "New skins"
+      }
     ]
   },
   {
@@ -220,17 +376,30 @@
     "accessCode": "N1Y6",
     "name": "Lila Anson",
     "mainPhoto": "/users/13/main.jpg",
-    "tags": ["United", "Delta", "Alaska"],
+    "tags": [
+      "United",
+      "Delta",
+      "Alaska"
+    ],
     "age": 33,
     "height": "6'3\"",
     "stereotype": "Always busy and travelling and catching flights",
     "profession": "Corporate Consultant",
     "location": "City, State",
-    "photos": ["/users/13/photo1.jpg", "/users/13/photo2.jpg", "/users/13/photo3.jpg", "/users/13/photo4.jpg", "/users/13/photo5.jpg"],
+    "photos": [],
     "prompts": [
-      { "question": "About me", "answer": "Never in one place for too long" },
-      { "question": "Dating me is like", "answer": "A layover" },
-      { "question": "My simple pleasures", "answer": "Airport lounges" }
+      {
+        "question": "About me",
+        "answer": "Never in one place for too long"
+      },
+      {
+        "question": "Dating me is like",
+        "answer": "A layover"
+      },
+      {
+        "question": "My simple pleasures",
+        "answer": "Airport lounges"
+      }
     ]
   },
   {
@@ -238,17 +407,30 @@
     "accessCode": "P5Z8",
     "name": "Madeline Andersen",
     "mainPhoto": "/users/14/main.jpg",
-    "tags": ["Interest 1", "Interest 2", "Interest 3"],
+    "tags": [
+      "Interest 1",
+      "Interest 2",
+      "Interest 3"
+    ],
     "age": 20,
     "height": "5'2\"",
     "stereotype": "Grew up on a farm and is a farmer girl",
     "profession": "Farmer",
     "location": "Fresno, CA",
-    "photos": ["/users/14/photo1.jpg", "/users/14/photo2.jpg", "/users/14/photo3.jpg", "/users/14/photo4.jpg", "/users/14/photo5.jpg"],
+    "photos": [],
     "prompts": [
-      { "question": "About me", "answer": "Once a farmer girl, always a farmer girl" },
-      { "question": "Dating me is like", "answer": "Tractor dates" },
-      { "question": "My simple pleasures", "answer": "Walking in the corn fields" }
+      {
+        "question": "About me",
+        "answer": "Once a farmer girl, always a farmer girl"
+      },
+      {
+        "question": "Dating me is like",
+        "answer": "Tractor dates"
+      },
+      {
+        "question": "My simple pleasures",
+        "answer": "Walking in the corn fields"
+      }
     ]
   },
   {
@@ -256,17 +438,30 @@
     "accessCode": "Q9A3",
     "name": "Wess Hailey",
     "mainPhoto": "/users/15/main.jpg",
-    "tags": ["Sleep", "Rest", "Relaxing"],
+    "tags": [
+      "Sleep",
+      "Rest",
+      "Relaxing"
+    ],
     "age": 23,
     "height": "6'4\"",
     "stereotype": "Exhausted grad student",
     "profession": "Graduate Student",
     "location": "Boulder, CO",
-    "photos": ["/users/15/photo1.jpg", "/users/15/photo2.jpg", "/users/15/photo3.jpg", "/users/15/photo4.jpg", "/users/15/photo5.jpg"],
+    "photos": [],
     "prompts": [
-      { "question": "About me", "answer": "Trying make it out with my PhD and my soul" },
-      { "question": "Dating me is like", "answer": "Hearing me complain about my advisor" },
-      { "question": "My simple pleasures", "answer": "The one week of vacation my PI gives me a year" }
+      {
+        "question": "About me",
+        "answer": "Trying make it out with my PhD and my soul"
+      },
+      {
+        "question": "Dating me is like",
+        "answer": "Hearing me complain about my advisor"
+      },
+      {
+        "question": "My simple pleasures",
+        "answer": "The one week of vacation my PI gives me a year"
+      }
     ]
   },
   {
@@ -274,17 +469,30 @@
     "accessCode": "R2B7",
     "name": "Blake Karbon",
     "mainPhoto": "/users/16/main.jpg",
-    "tags": ["Snorkeling", "Diving", "Surfing"],
+    "tags": [
+      "Snorkeling",
+      "Diving",
+      "Surfing"
+    ],
     "age": 19,
     "height": "5'1\"",
     "stereotype": "Beach bro",
     "profession": "Profession",
     "location": "Honolulu, HI",
-    "photos": ["/users/16/photo1.jpg", "/users/16/photo2.jpg", "/users/16/photo3.jpg", "/users/16/photo4.jpg", "/users/16/photo5.jpg"],
+    "photos": [],
     "prompts": [
-      { "question": "About me", "answer": "Beach > mountains any day" },
-      { "question": "Dating me is like", "answer": "Sand everywhere" },
-      { "question": "My simple pleasures", "answer": "Wading in the ocean" }
+      {
+        "question": "About me",
+        "answer": "Beach > mountains any day"
+      },
+      {
+        "question": "Dating me is like",
+        "answer": "Sand everywhere"
+      },
+      {
+        "question": "My simple pleasures",
+        "answer": "Wading in the ocean"
+      }
     ]
   },
   {
@@ -292,17 +500,30 @@
     "accessCode": "S6C1",
     "name": "Michael Gavina",
     "mainPhoto": "/users/17/main.jpg",
-    "tags": ["Not sure", "What am I doing", "Confused"],
+    "tags": [
+      "Not sure",
+      "What am I doing",
+      "Confused"
+    ],
     "age": 35,
     "height": "5'0\"",
     "stereotype": "Very confused about everything and not self confident",
     "profession": "Unemployed",
     "location": "Greeley, CO",
-    "photos": ["/users/17/photo1.jpg", "/users/17/photo2.jpg", "/users/17/photo3.jpg", "/users/17/photo4.jpg", "/users/17/photo5.jpg"],
+    "photos": [],
     "prompts": [
-      { "question": "About me", "answer": "Bad at bios" },
-      { "question": "Dating me is like", "answer": "Learning as we go" },
-      { "question": "My simple pleasures", "answer": "Writing the date" }
+      {
+        "question": "About me",
+        "answer": "Bad at bios"
+      },
+      {
+        "question": "Dating me is like",
+        "answer": "Learning as we go"
+      },
+      {
+        "question": "My simple pleasures",
+        "answer": "Writing the date"
+      }
     ]
   },
   {
@@ -310,17 +531,30 @@
     "accessCode": "T4D5",
     "name": "Sopy Thann",
     "mainPhoto": "/users/18/main.jpg",
-    "tags": ["EDM", "Making beats", "Concerts"],
+    "tags": [
+      "EDM",
+      "Making beats",
+      "Concerts"
+    ],
     "age": 18,
     "height": "6'5\"",
     "stereotype": "Music lover, wannabe artist",
     "profession": "Amatuer DJ",
     "location": "Jacksonville, FL",
-    "photos": ["/users/18/photo1.jpg", "/users/18/photo2.jpg", "/users/18/photo3.jpg", "/users/18/photo4.jpg", "/users/18/photo5.jpg"],
+    "photos": [],
     "prompts": [
-      { "question": "About me", "answer": "Music = life" },
-      { "question": "Dating me is like", "answer": "Sharing earbuds" },
-      { "question": "My simple pleasures", "answer": "Discover Weekly" }
+      {
+        "question": "About me",
+        "answer": "Music = life"
+      },
+      {
+        "question": "Dating me is like",
+        "answer": "Sharing earbuds"
+      },
+      {
+        "question": "My simple pleasures",
+        "answer": "Discover Weekly"
+      }
     ]
   },
   {
@@ -328,17 +562,30 @@
     "accessCode": "U8E2",
     "name": "Nora Su",
     "mainPhoto": "/users/19/main.jpg",
-    "tags": ["Trees", "Grass", "Flowers"],
+    "tags": [
+      "Trees",
+      "Grass",
+      "Flowers"
+    ],
     "age": 36,
     "height": "4'11\"",
     "stereotype": "Outdoors lover to an annoying extent, talking about getting fresh air and makes fun of people who hang out in their house",
     "profession": "Profession",
     "location": "Bend, OR",
-    "photos": ["/users/19/photo1.jpg", "/users/19/photo2.jpg", "/users/19/photo3.jpg", "/users/19/photo4.jpg", "/users/19/photo5.jpg"],
+    "photos": [],
     "prompts": [
-      { "question": "About me", "answer": "Looove the outdoors" },
-      { "question": "Dating me is like", "answer": "A picnic in the park" },
-      { "question": "My simple pleasures", "answer": "A breath of fresh air" }
+      {
+        "question": "About me",
+        "answer": "Looove the outdoors"
+      },
+      {
+        "question": "Dating me is like",
+        "answer": "A picnic in the park"
+      },
+      {
+        "question": "My simple pleasures",
+        "answer": "A breath of fresh air"
+      }
     ]
   }
 ]
