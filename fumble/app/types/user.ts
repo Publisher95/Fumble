@@ -9,7 +9,6 @@ export interface UserProfile {
   stereotype?: string;
   profession: string;
   location: string;
-  relationshipType: string;
   photos: string[];
   prompts: { question: string; answer: string }[];
 }

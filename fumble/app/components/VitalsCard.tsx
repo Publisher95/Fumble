@@ -5,7 +5,6 @@ interface VitalsCardProps {
   height: string;
   profession: string;
   location: string;
-  relationshipType: string;
   stereotype?: string;
 }
 
@@ -14,7 +13,6 @@ export default function VitalsCard({
   height,
   profession,
   location,
-  relationshipType,
   stereotype,
 }: VitalsCardProps) {
   return (
@@ -47,10 +45,6 @@ export default function VitalsCard({
         <div className="flex items-center gap-3">
           <MapPin size={20} className="text-zinc-900 shrink-0" />
           <span className="text-base font-medium">{location}</span>
-        </div>
-        <div className="flex items-center gap-3">
-          <Users size={20} className="text-zinc-900 shrink-0" />
-          <span className="text-base font-medium">{relationshipType}</span>
         </div>
       </div>
     </div>
