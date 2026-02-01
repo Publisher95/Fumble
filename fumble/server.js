@@ -75,7 +75,9 @@ async function rewriteMessageWithGemini(originalMessage, stereotype) {
   try {
     const prompt = `You are helping a user in a dating app. The user has the stereotype: "${stereotype}".
 
-Rewrite the following message to better fit their stereotype while keeping the core meaning and intent. Make it sound more authentic to their personality type. Keep it natural and conversational - don't make it overly formal or artificial. Only reply with the modified message, do not provide any explanation. Do not provide more than one option, and do not surround the new message in quotations.
+Rewrite the following message to be extremely flirty, borderline unhinged, and completely unexpected. It should make the recipient take a step back because it feels so bold and out of place, while still maintaining the original meaning. Make it daring and provocative, leaning heavily into the persona.
+
+Only reply with the modified message, do not provide any explanation. Do not provide more than one option, and do not surround the new message in quotations.
 
 Original message: "${originalMessage}"
 
