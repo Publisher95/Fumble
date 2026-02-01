@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import LoginView from "./components/LoginView";
 import SwipingView from "./components/SwipingView";
 import ChatView from "./components/ChatView";
@@ -8,6 +8,7 @@ import SelfProfileView from "./components/SelfProfileView";
 import ChatDetailView from "./components/ChatDetailView";
 import { Heart, MessageCircle, User } from "lucide-react";
 import { UserProfile } from "./types/user";
+import { socket } from "./socket";
 
 interface Chat { id: number; name: string; }
 
@@ -16,12 +17,33 @@ export default function Home() {
   const [activeTab, setActiveTab] = useState("swiping");
   const [activeChat, setActiveChat] = useState<Chat | null>(null);
 
+  useEffect(() => {
+    if (currentUser) {
+      socket.connect();
+      socket.emit("join", currentUser.id.toString());
+      console.log("Socket connected for user:", currentUser.id);
+    }
+    return () => {
+      if (currentUser) {
+        socket.disconnect();
+        console.log("Socket disconnected for user:", currentUser.id);
+      }
+    };
+  }, [currentUser]);
+
   if (!currentUser) {
     return <LoginView onLoginSuccess={(user) => setCurrentUser(user)} />;
   }
 
   if (activeChat) {
-    return <ChatDetailView chat={activeChat} onBack={() => setActiveChat(null)} />;
+    return (
+      <ChatDetailView
+        chat={activeChat}
+        onBack={() => setActiveChat(null)}
+        currentUserId={currentUser.id}
+        socket={socket}
+      />
+    );
   }
 
   return (
@@ -31,7 +53,7 @@ export default function Home() {
         {/* Content Area */}
         <div className="flex-1 overflow-y-auto w-full">
           {activeTab === "swiping" && <SwipingView currentUser={currentUser} />}
-          {activeTab === "chat" && <ChatView onSelectChat={(chat) => setActiveChat(chat)} />}
+          {activeTab === "chat" && <ChatView onSelectChat={(chat) => setActiveChat(chat)} currentUser={currentUser} />}
           {activeTab === "profile" && <SelfProfileView currentUser={currentUser} />}
         </div>
 
