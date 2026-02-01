@@ -1,21 +1,87 @@
 "use client";
 
+import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, MoreHorizontal, BadgeCheck, SendHorizontal } from "lucide-react";
+import { Socket } from "socket.io-client";
+
+interface Message {
+  id: number;
+  text: string;
+  isMe: boolean;
+  timestamp: number;
+}
 
 interface ChatDetailViewProps {
   chat: { id: number; name: string };
   onBack: () => void;
+  currentUserId: string;
+  socket: Socket;
 }
 
-export default function ChatDetailView({ chat, onBack }: ChatDetailViewProps) {
-  const messages = [
-    { id: 1, text: "Hey! What do you usually do to unwind after work?", isMe: true },
-    { id: 2, text: "Mostly music or a walk. You?", isMe: false },
-    { id: 3, text: "Same! Walks + podcasts are my go-to.", isMe: true },
-    { id: 4, text: "Nice. What kind of podcasts?", isMe: false },
-    { id: 5, text: "A mix—true crime and random life stuff. You?", isMe: true },
-    { id: 6, text: "Love that. I'm more into comedy and stories lately.", isMe: false },
-  ];
+export default function ChatDetailView({ chat, onBack, currentUserId, socket }: ChatDetailViewProps) {
+  const [messages, setMessages] = useState<Message[]>([
+    { id: 1, text: "Hey! What do you usually do to unwind after work?", isMe: true, timestamp: Date.now() - 600000 },
+    { id: 2, text: "Mostly music or a walk. You?", isMe: false, timestamp: Date.now() - 500000 },
+    { id: 3, text: "Same! Walks + podcasts are my go-to.", isMe: true, timestamp: Date.now() - 400000 },
+    { id: 4, text: "Nice. What kind of podcasts?", isMe: false, timestamp: Date.now() - 300000 },
+    { id: 5, text: "A mix—true crime and random life stuff. You?", isMe: true, timestamp: Date.now() - 200000 },
+    { id: 6, text: "Love that. I'm more into comedy and stories lately.", isMe: false, timestamp: Date.now() - 100000 },
+  ]);
+  const [inputText, setInputText] = useState("");
+  const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [messages]);
+
+  useEffect(() => {
+    const handleReceiveMessage = ({ from, message, timestamp }: { from: string; message: string; timestamp: number }) => {
+      console.log("Received message:", { from, message, timestamp });
+      setMessages(prev => [...prev, {
+        id: Date.now(),
+        text: message,
+        isMe: false,
+        timestamp
+      }]);
+    };
+
+    socket.on("receive_message", handleReceiveMessage);
+
+    return () => {
+      socket.off("receive_message", handleReceiveMessage);
+    };
+  }, [socket]);
+
+  const handleSend = () => {
+    if (inputText.trim() === "") return;
+
+    const newMessage = {
+      id: Date.now(),
+      text: inputText,
+      isMe: true,
+      timestamp: Date.now()
+    };
+
+    setMessages(prev => [...prev, newMessage]);
+
+    socket.emit("send_message", {
+      to: chat.id.toString(),
+      message: inputText
+    });
+
+    setInputText("");
+  };
+
+  const handleKeyPress = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      handleSend();
+    }
+  };
 
   return (
     <div className="flex flex-col h-screen bg-white text-black font-sans z-50 fixed inset-0">
@@ -42,7 +108,7 @@ export default function ChatDetailView({ chat, onBack }: ChatDetailViewProps) {
 
       {/* Messages */}
       <div className="flex-1 overflow-y-auto p-4 flex flex-col gap-4 bg-white">
-        {messages.map((msg, index) => (
+        {messages.map((msg) => (
           <div key={msg.id} className={`flex w-full ${msg.isMe ? 'justify-end' : 'justify-start items-end gap-2'}`}>
 
             {/* Avatar for Their messages */}
@@ -63,6 +129,7 @@ export default function ChatDetailView({ chat, onBack }: ChatDetailViewProps) {
             </div>
           </div>
         ))}
+        <div ref={messagesEndRef} />
       </div>
 
       {/* Footer */}
@@ -73,9 +140,15 @@ export default function ChatDetailView({ chat, onBack }: ChatDetailViewProps) {
               type="text"
               placeholder="Send a message"
               className="bg-transparent w-full outline-none text-sm placeholder-zinc-400"
+              value={inputText}
+              onChange={(e) => setInputText(e.target.value)}
+              onKeyPress={handleKeyPress}
             />
           </div>
-          <button className="w-10 h-10 rounded-full border border-zinc-200 flex items-center justify-center text-black bg-white shadow-sm hover:bg-zinc-50 active:scale-95 transition-all">
+          <button
+            onClick={handleSend}
+            className="w-10 h-10 rounded-full border border-zinc-200 flex items-center justify-center text-black bg-white shadow-sm hover:bg-zinc-50 active:scale-95 transition-all"
+          >
             <SendHorizontal size={20} />
           </button>
         </div>
